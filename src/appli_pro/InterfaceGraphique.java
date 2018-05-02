@@ -31,6 +31,7 @@ public class InterfaceGraphique extends javax.swing.JFrame {
      */
     private Connexion fenConnexion;
     private Deconnexion fenDeconnexion;
+    private Personne info;
 //    private Inscription fenInscription;
 
     /**
@@ -47,12 +48,12 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         //titre 
         this.setTitle("Gestion Entreprise GSBV");
-
+        
         jTabbedMenuDirecteur.setVisible(false);
-        jPanelMenuResponsable.setVisible(false);
+        jTabbedMenuResponsable.setVisible(false);
         jPanelMenuEmploye.setVisible(false);
         jPanelMenuAccueil.setVisible(true);
-
+        
     }
 
     /**
@@ -117,17 +118,6 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jPanelMenuResponsable = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
         jPanelMenuAccueil = new javax.swing.JPanel();
         jButtonConnexion = new javax.swing.JButton();
         jButtonInscription = new javax.swing.JButton();
@@ -143,23 +133,70 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
+        jTextFieldModifARue = new javax.swing.JTextField();
+        jTextFieldModifNumPerso = new javax.swing.JTextField();
+        jTextFieldModifNumPro = new javax.swing.JTextField();
+        jTextFieldModifEmail = new javax.swing.JTextField();
+        jTextFieldModifId = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButtonModif = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        jTextFieldModifACp = new javax.swing.JTextField();
+        jTextFieldModifAVille = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jTextFieldModifMDP = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jSeparator7 = new javax.swing.JSeparator();
+        jTabbedMenuResponsable = new javax.swing.JTabbedPane();
+        jPanelPositionnement = new javax.swing.JPanel();
+        jButton9 = new javax.swing.JButton();
+        jLabel40 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jTextFieldNomModifRole1 = new javax.swing.JTextField();
+        jTextFieldPrenomModifRole1 = new javax.swing.JTextField();
+        jButton10 = new javax.swing.JButton();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
+        jPanelInfos = new javax.swing.JPanel();
+        jLabel333 = new javax.swing.JLabel();
+        jLabel344 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jTextFieldModifARue1 = new javax.swing.JTextField();
+        jTextFieldModifNumPerso1 = new javax.swing.JTextField();
+        jTextFieldModifNumPro1 = new javax.swing.JTextField();
+        jTextFieldModifEmail1 = new javax.swing.JTextField();
+        jTextFieldModifId1 = new javax.swing.JTextField();
+        jButton8 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButtonModif1 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jTextFieldModifACp1 = new javax.swing.JTextField();
+        jTextFieldModifAVille1 = new javax.swing.JTextField();
+        jSeparator10 = new javax.swing.JSeparator();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jTextFieldModifMDP1 = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
+        jButton11 = new javax.swing.JButton();
+        jSeparator11 = new javax.swing.JSeparator();
         nomMenuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         connexionMenuItem = new javax.swing.JMenuItem();
@@ -471,85 +508,6 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         desktopPane.add(jTabbedMenuDirecteur);
         jTabbedMenuDirecteur.setBounds(0, 0, 550, 430);
 
-        jButton1.setText("jButton1");
-
-        jLabel6.setText("Modification de role d'un employé");
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane3.setViewportView(jList1);
-
-        jLabel11.setText("jLabel11");
-
-        jLabel33.setText("jLabel33");
-
-        jLabel34.setText("Nom de l'employé");
-
-        jLabel35.setText("Prenom de l'employé");
-
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
-
-        org.jdesktop.layout.GroupLayout jPanelMenuResponsableLayout = new org.jdesktop.layout.GroupLayout(jPanelMenuResponsable);
-        jPanelMenuResponsable.setLayout(jPanelMenuResponsableLayout);
-        jPanelMenuResponsableLayout.setHorizontalGroup(
-            jPanelMenuResponsableLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanelMenuResponsableLayout.createSequentialGroup()
-                .add(jPanelMenuResponsableLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanelMenuResponsableLayout.createSequentialGroup()
-                        .add(28, 28, 28)
-                        .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 195, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(jPanelMenuResponsableLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(jLabel11)
-                            .add(jLabel33)
-                            .add(jLabel34)
-                            .add(jLabel35)
-                            .add(jTextField1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                            .add(jTextField2)))
-                    .add(jPanelMenuResponsableLayout.createSequentialGroup()
-                        .add(191, 191, 191)
-                        .add(jLabel6)))
-                .addContainerGap(184, Short.MAX_VALUE))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanelMenuResponsableLayout.createSequentialGroup()
-                .add(0, 0, Short.MAX_VALUE)
-                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 137, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(30, 30, 30))
-        );
-        jPanelMenuResponsableLayout.setVerticalGroup(
-            jPanelMenuResponsableLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanelMenuResponsableLayout.createSequentialGroup()
-                .addContainerGap()
-                .add(jLabel6)
-                .add(jPanelMenuResponsableLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                    .add(jPanelMenuResponsableLayout.createSequentialGroup()
-                        .add(33, 33, 33)
-                        .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 187, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jPanelMenuResponsableLayout.createSequentialGroup()
-                        .add(43, 43, 43)
-                        .add(jLabel34)
-                        .add(4, 4, 4)
-                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jLabel35)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jLabel33)
-                        .add(18, 18, 18)
-                        .add(jLabel11)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 130, Short.MAX_VALUE)
-                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        desktopPane.add(jPanelMenuResponsable);
-        jPanelMenuResponsable.setBounds(0, 0, 550, 430);
-
         jButtonConnexion.setText("Connexion");
         jButtonConnexion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -604,9 +562,9 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         desktopPane.add(jPanelMenuAccueil);
         jPanelMenuAccueil.setBounds(0, -3, 550, 430);
 
-        jLabel16.setText("jLabelRoleActu");
+        jLabel16.setText("           ");
 
-        jLabel14.setText("Statut");
+        jLabel14.setText("Statut :");
 
         jLabel17.setText("Adresse");
 
@@ -614,49 +572,75 @@ public class InterfaceGraphique extends javax.swing.JFrame {
 
         jLabel19.setText("E mail");
 
-        jLabel20.setText("jLabel20");
+        jLabel20.setText("Perso :");
 
-        jLabel21.setText("jLabel21");
+        jLabel21.setText("Pro :");
 
-        jLabel22.setText("jLabel22");
+        jLabel23.setText("ID");
 
-        jLabel23.setText("jLabel23");
+        jTextFieldModifARue.setEditable(false);
 
-        jTextField3.setEditable(false);
-        jTextField3.setText("jTextField3");
+        jTextFieldModifNumPerso.setEditable(false);
 
-        jTextField4.setEditable(false);
-        jTextField4.setText("jTextField4");
+        jTextFieldModifNumPro.setEditable(false);
 
-        jTextField5.setEditable(false);
-        jTextField5.setText("jTextField5");
+        jTextFieldModifEmail.setEditable(false);
 
-        jTextField6.setEditable(false);
-        jTextField6.setText("jTextField6");
+        jTextFieldModifId.setEditable(false);
 
-        jTextField7.setText("jTextField7");
+        jButton6.setText("Modifier");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
-        jTextField8.setText("jTextField8");
-
-        jTextField9.setText("jTextField9");
-
-        jButton5.setText("jButton5");
-
-        jButton6.setText("jButton6");
-
-        jButton12.setText("jButton12");
+        jButton12.setText("Modifier");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jButtonModif.setText("Validé");
+        jButtonModif.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModifActionPerformed(evt);
+            }
+        });
 
-        jButton14.setText("jButton14");
+        jButton14.setText("Modifier");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
-        jButton15.setText("jButton15");
+        jButton15.setText("Modifier");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
-        jTextField10.setEditable(false);
-        jTextField10.setText("jTextField10");
+        jTextFieldModifACp.setEditable(false);
 
-        jTextField11.setEditable(false);
-        jTextField11.setText("jTextField11");
+        jTextFieldModifAVille.setEditable(false);
+
+        jLabel22.setText("             ");
+
+        jLabel38.setText("              ");
+
+        jTextFieldModifMDP.setEditable(false);
+
+        jLabel39.setText("MDP");
+
+        jButton5.setText("Modififer");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanelMenuEmployeLayout = new org.jdesktop.layout.GroupLayout(jPanelMenuEmploye);
         jPanelMenuEmploye.setLayout(jPanelMenuEmployeLayout);
@@ -664,131 +648,482 @@ public class InterfaceGraphique extends javax.swing.JFrame {
             jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanelMenuEmployeLayout.createSequentialGroup()
                 .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                        .add(44, 44, 44)
-                        .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel14)
-                            .add(jLabel16)
-                            .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 575, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                    .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                        .add(46, 46, 46)
-                        .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                            .addContainerGap()
                             .add(jLabel22)
-                            .add(jLabel23))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                            .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                                    .add(jLabel14)
+                                    .add(18, 18, 18)
+                                    .add(jLabel16))
+                                .add(jSeparator6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
+                                .add(jSeparator3)))
+                        .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                            .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanelMenuEmployeLayout.createSequentialGroup()
+                                    .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                        .add(jTextFieldModifNumPro, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                                            .add(jTextFieldModifEmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 234, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                            .add(66, 66, 66))
+                                        .add(org.jdesktop.layout.GroupLayout.LEADING, jPanelMenuEmployeLayout.createSequentialGroup()
+                                            .add(63, 63, 63)
+                                            .add(jLabel20)
+                                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                            .add(jTextFieldModifNumPerso, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 105, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 28, Short.MAX_VALUE)
+                                            .add(jLabel21)
+                                            .add(116, 116, 116))
+                                        .add(org.jdesktop.layout.GroupLayout.LEADING, jPanelMenuEmployeLayout.createSequentialGroup()
+                                            .add(62, 62, 62)
+                                            .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                                .add(jLabel38)
+                                                .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                                                    .add(jTextFieldModifARue, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 138, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                                    .add(18, 18, 18)
+                                                    .add(jTextFieldModifACp)
+                                                    .add(18, 18, 18)
+                                                    .add(jTextFieldModifAVille, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
+                                    .add(42, 42, 42))
+                                .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                                    .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                        .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                                            .add(213, 213, 213)
+                                            .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                                .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                                                    .add(13, 13, 13)
+                                                    .add(jLabel17))
+                                                .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                                                    .add(1, 1, 1)
+                                                    .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                                                        .add(jLabel19)
+                                                        .add(jLabel18)))))
+                                        .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                                            .addContainerGap()
+                                            .add(jLabel23)
+                                            .add(14, 14, 14)
+                                            .add(jTextFieldModifId, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 99, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                            .add(jButton6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 75, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)))
+                            .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                .add(jButton14)
+                                .add(jButton12)
+                                .add(jButton15))))
+                    .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                        .addContainerGap()
                         .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jSeparator7)
                             .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                                .add(jTextField8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(54, 54, 54)
-                                .add(jButton5))
-                            .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                                .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                    .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                                        .add(jTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 138, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(69, 69, 69)
-                                        .add(jTextField10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(106, 106, 106)
-                                        .add(jTextField11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                                        .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                            .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                                                .add(jTextField7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                                .add(148, 148, 148))
-                                            .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                                                .add(jTextField9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                                .add(62, 62, 62)
-                                                .add(jButton6)))
-                                        .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                            .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                                                .add(19, 19, 19)
-                                                .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                                    .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                                                        .add(13, 13, 13)
-                                                        .add(jLabel17))
-                                                    .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                                                        .add(1, 1, 1)
-                                                        .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                                            .add(jLabel19)
-                                                            .add(jLabel18)))))
-                                            .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                                .add(jTextField6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 234, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                                    .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                                        .add(63, 63, 63)
-                                        .add(jLabel20)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                        .add(jTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .add(jLabel21)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                        .add(jTextField5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(42, 42, 42)))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 116, Short.MAX_VALUE)
-                                .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                    .add(jButton12)
-                                    .add(jButton14)
-                                    .add(jButton15))
-                                .add(10, 10, 10)))))
+                                .add(jLabel39)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jTextFieldModifMDP, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 99, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jButton5)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(jButtonModif, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 151, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(18, 18, 18)))))
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanelMenuEmployeLayout.createSequentialGroup()
-                .add(0, 0, Short.MAX_VALUE)
-                .add(jButtonModif, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 151, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(23, 23, 23))
         );
         jPanelMenuEmployeLayout.setVerticalGroup(
             jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanelMenuEmployeLayout.createSequentialGroup()
                 .add(16, 16, 16)
-                .add(jLabel14)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(18, 18, 18)
-                .add(jLabel16)
-                .add(13, 13, 13)
+                .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                        .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(jLabel14)
+                            .add(jLabel16))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jSeparator6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 21, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel38)))
+                    .add(jLabel22))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jLabel17)
                 .add(4, 4, 4)
                 .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jButton14)
-                    .add(jTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jTextField11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jTextField10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jTextFieldModifARue, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextFieldModifAVille, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextFieldModifACp, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jLabel18)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jTextField5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextFieldModifNumPro, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextFieldModifNumPerso, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jButton12)
                     .add(jLabel20)
                     .add(jLabel21))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jLabel19)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                        .add(32, 32, 32)
-                        .add(jTextField7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jPanelMenuEmployeLayout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jLabel19)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(0, 0, Short.MAX_VALUE)
                         .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jTextField6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jButton15))))
-                .add(18, 18, 18)
-                .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel22)
-                    .add(jTextField8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton5))
-                .add(18, 18, 18)
-                .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel23)
-                    .add(jTextField9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton6))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jButtonModif, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                .add(26, 26, 26))
+                            .add(jTextFieldModifMDP, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jButton5)
+                            .add(jLabel39)
+                            .add(jButtonModif, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 39, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(49, 49, 49))
+                    .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                        .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jButton15)
+                            .add(jTextFieldModifEmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(31, 31, 31)
+                        .add(jSeparator7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                                .add(26, 26, 26)
+                                .add(jPanelMenuEmployeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                    .add(jTextFieldModifId, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(jButton6)))
+                            .add(jPanelMenuEmployeLayout.createSequentialGroup()
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(jLabel23)))
+                        .add(89, 89, 89))))
         );
 
         desktopPane.add(jPanelMenuEmploye);
-        jPanelMenuEmploye.setBounds(80, 10, 680, 420);
+        jPanelMenuEmploye.setBounds(0, 0, 550, 430);
+
+        jButton9.setText("Confirmer");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jLabel40.setText("Modification de role d'un employé");
+
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane4.setViewportView(jList2);
+
+        jLabel41.setText("Statut actuel :");
+
+        jLabel42.setText("Statut perdu :");
+
+        jLabel43.setText("Nom de l'employé");
+
+        jLabel44.setText("Prenom de l'employé");
+
+        jButton10.setText("Voir infos");
+
+        jLabel45.setText("     ");
+
+        jLabel46.setText("       ");
+
+        org.jdesktop.layout.GroupLayout jPanelPositionnementLayout = new org.jdesktop.layout.GroupLayout(jPanelPositionnement);
+        jPanelPositionnement.setLayout(jPanelPositionnementLayout);
+        jPanelPositionnementLayout.setHorizontalGroup(
+            jPanelPositionnementLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanelPositionnementLayout.createSequentialGroup()
+                .add(28, 28, 28)
+                .add(jPanelPositionnementLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanelPositionnementLayout.createSequentialGroup()
+                        .add(jLabel41)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jLabel46)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jButton9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 137, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(20, 20, 20))
+                    .add(jPanelPositionnementLayout.createSequentialGroup()
+                        .add(jPanelPositionnementLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanelPositionnementLayout.createSequentialGroup()
+                                .add(jLabel42)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jLabel45))
+                            .add(jPanelPositionnementLayout.createSequentialGroup()
+                                .add(jPanelPositionnementLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                                    .add(jButton10)
+                                    .add(jScrollPane4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 195, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .add(18, 18, 18)
+                                .add(jPanelPositionnementLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                    .add(jLabel43)
+                                    .add(jLabel44)
+                                    .add(jTextFieldNomModifRole1)
+                                    .add(jTextFieldPrenomModifRole1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))))
+                        .add(0, 0, Short.MAX_VALUE))))
+            .add(jPanelPositionnementLayout.createSequentialGroup()
+                .add(jPanelPositionnementLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanelPositionnementLayout.createSequentialGroup()
+                        .add(191, 191, 191)
+                        .add(jLabel40))
+                    .add(jPanelPositionnementLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jSeparator9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 519, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .add(0, 0, Short.MAX_VALUE))
+        );
+        jPanelPositionnementLayout.setVerticalGroup(
+            jPanelPositionnementLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanelPositionnementLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(jLabel40)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jSeparator9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jPanelPositionnementLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanelPositionnementLayout.createSequentialGroup()
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 32, Short.MAX_VALUE)
+                        .add(jScrollPane4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 187, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanelPositionnementLayout.createSequentialGroup()
+                        .add(27, 27, 27)
+                        .add(jLabel43)
+                        .add(4, 4, 4)
+                        .add(jTextFieldNomModifRole1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jLabel44)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextFieldPrenomModifRole1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jButton10)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanelPositionnementLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel42)
+                    .add(jLabel45))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanelPositionnementLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanelPositionnementLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(jLabel41)
+                        .add(jLabel46))
+                    .add(jButton9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(28, 28, 28))
+        );
+
+        jTabbedMenuResponsable.addTab("Positionnement", jPanelPositionnement);
+
+        jLabel333.setText("           ");
+
+        jLabel344.setText("Statut :");
+
+        jLabel35.setText("Adresse");
+
+        jLabel36.setText("Telephone");
+
+        jLabel37.setText("E mail");
+
+        jLabel47.setText("Perso :");
+
+        jLabel48.setText("Pro :");
+
+        jLabel49.setText("ID");
+
+        jTextFieldModifARue1.setEditable(false);
+
+        jTextFieldModifNumPerso1.setEditable(false);
+
+        jTextFieldModifNumPro1.setEditable(false);
+
+        jTextFieldModifEmail1.setEditable(false);
+
+        jTextFieldModifId1.setEditable(false);
+
+        jButton8.setText("Modifier");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setText("Modifier");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        jButtonModif1.setText("Validé");
+        jButtonModif1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModif1ActionPerformed(evt);
+            }
+        });
+
+        jButton16.setText("Modifier");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        jButton17.setText("Modifier");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        jTextFieldModifACp1.setEditable(false);
+
+        jTextFieldModifAVille1.setEditable(false);
+
+        jLabel50.setText("             ");
+
+        jLabel51.setText("              ");
+
+        jTextFieldModifMDP1.setEditable(false);
+
+        jLabel52.setText("MDP");
+
+        jButton11.setText("Modififer");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout jPanelInfosLayout = new org.jdesktop.layout.GroupLayout(jPanelInfos);
+        jPanelInfos.setLayout(jPanelInfosLayout);
+        jPanelInfosLayout.setHorizontalGroup(
+            jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanelInfosLayout.createSequentialGroup()
+                .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanelInfosLayout.createSequentialGroup()
+                        .add(24, 24, 24)
+                        .add(jTextFieldModifARue1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 138, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanelInfosLayout.createSequentialGroup()
+                        .add(45, 45, 45)
+                        .add(jLabel47)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextFieldModifNumPerso1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 105, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanelInfosLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jLabel50)
+                        .add(35, 35, 35)
+                        .add(jLabel51)))
+                .add(18, 18, 18)
+                .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanelInfosLayout.createSequentialGroup()
+                        .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jTextFieldModifACp1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 74, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel35))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jButton13)
+                            .add(jPanelInfosLayout.createSequentialGroup()
+                                .add(jTextFieldModifAVille1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(18, 18, 18)
+                                .add(jButton16))
+                            .add(jButton17))
+                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(jPanelInfosLayout.createSequentialGroup()
+                        .add(jLabel48)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel37)
+                            .add(jTextFieldModifNumPro1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel36))
+                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .add(jPanelInfosLayout.createSequentialGroup()
+                .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanelInfosLayout.createSequentialGroup()
+                        .add(45, 45, 45)
+                        .add(jLabel344)
+                        .add(18, 18, 18)
+                        .add(jLabel333))
+                    .add(jPanelInfosLayout.createSequentialGroup()
+                        .add(132, 132, 132)
+                        .add(jTextFieldModifEmail1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 234, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .add(jPanelInfosLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jSeparator11)
+                    .add(jPanelInfosLayout.createSequentialGroup()
+                        .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jSeparator10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 493, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jPanelInfosLayout.createSequentialGroup()
+                                .add(4, 4, 4)
+                                .add(jLabel49)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(jTextFieldModifId1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 99, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(jButton8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 75, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(0, 70, Short.MAX_VALUE))
+                    .add(jPanelInfosLayout.createSequentialGroup()
+                        .add(jLabel52)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextFieldModifMDP1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 99, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jButton11)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jButtonModif1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 151, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(79, 79, 79))))
+        );
+        jPanelInfosLayout.setVerticalGroup(
+            jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanelInfosLayout.createSequentialGroup()
+                .add(16, 16, 16)
+                .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel344)
+                    .add(jLabel333))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jSeparator10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanelInfosLayout.createSequentialGroup()
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jLabel35))
+                    .add(jPanelInfosLayout.createSequentialGroup()
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(jLabel50)
+                            .add(jLabel51))))
+                .add(14, 14, 14)
+                .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextFieldModifARue1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextFieldModifACp1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextFieldModifAVille1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton16))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel36)
+                .add(18, 18, 18)
+                .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextFieldModifNumPerso1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextFieldModifNumPro1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel48)
+                    .add(jLabel47)
+                    .add(jButton13))
+                .add(14, 14, 14)
+                .add(jLabel37)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jButton17)
+                    .add(jTextFieldModifEmail1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(18, 18, 18)
+                .add(jSeparator11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(29, 29, 29)
+                .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextFieldModifId1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel49)
+                    .add(jButton8))
+                .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanelInfosLayout.createSequentialGroup()
+                        .add(18, 18, 18)
+                        .add(jPanelInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(jLabel52)
+                            .add(jTextFieldModifMDP1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jButton11))
+                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanelInfosLayout.createSequentialGroup()
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 40, Short.MAX_VALUE)
+                        .add(jButtonModif1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 39, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(65, 65, 65))))
+        );
+
+        jTabbedMenuResponsable.addTab("Infos", jPanelInfos);
+
+        desktopPane.add(jTabbedMenuResponsable);
+        jTabbedMenuResponsable.setBounds(0, 0, 550, 430);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("Accueil");
@@ -874,38 +1209,41 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         fenDeconnexion = new Deconnexion(this, true);
         this.fenDeconnexion.setVisible(true);
     }//GEN-LAST:event_deconnexionMenuItemActionPerformed
-
+    
 
     private void jButtonPromActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPromActionPerformed
-        //recupere un employé et on peux le promouvoir 
+        //recupere un employé et on peux le promouvoir ou le retrograder en fonction de son grade actuel
         java.sql.Connection ct = SdzConnection.getInstance();
         String requete = null;
         String nom = jTextFieldNomProm.getText();
         String prenom = jTextFieldPrenomProm.getText();
         try {
             Statement state = ct.createStatement();
-            System.out.println("select * from utilisateurs  WHERE nom = '" + nom + "'And prenom ='" + prenom +"'");
-            ResultSet ligneRetournees = state.executeQuery("select * from utilisateurs  WHERE nom = '" + nom + "'And prenom ='" + prenom +"'");
-            if (ligneRetournees.next()){
-                    Integer idGrade = ligneRetournees.getInt("idGrade");
-                    if (idGrade == 3){
-                        requete = "UPDATE Utilisateurs SET idGrade=2 WHERE nom = '" + nom + "'And prenom ='" + prenom +"'";
-                        jLabel28.setText(nom +" "+ prenom + "était Employé.");
-                        jLabel29.setText(nom +" "+ prenom + " a été promu Responsable.");
-                    } else {
-                       if (idGrade == 2){
-                        requete = "UPDATE Utilisateurs SET idGrade=3 WHERE nom = '" + nom + "'And prenom ='" + prenom +"'";
-                        jLabel28.setText(nom +" "+ prenom + " était Responsable.");
-                        jLabel29.setText(nom +" "+ prenom + " a été rétrograder Employé.");
-                    }
+            System.out.println("select * from utilisateurs  WHERE nom = '" + nom + "'And prenom ='" + prenom + "'");
+            ResultSet ligneRetournees = state.executeQuery("select * from utilisateurs  WHERE nom = '" + nom + "'And prenom ='" + prenom + "'");
+            if (ligneRetournees.next()) {
+                Integer idGrade = ligneRetournees.getInt("idGrade");
+                if (idGrade == 3) {
+                    requete = "UPDATE Utilisateurs SET idGrade=2 WHERE nom = '" + nom + "'And prenom ='" + prenom + "'";
+                    jLabel28.setText(nom + " " + prenom + " était Employé.");
+                    jLabel29.setText(nom + " " + prenom + " a été promu Responsable.");
+                } else {
+                    if (idGrade == 2) {
+                    requete = "UPDATE Utilisateurs SET idGrade=3 WHERE nom = '" + nom + "'And prenom ='" + prenom + "'";
+                    jLabel28.setText(nom + " " + prenom + " était Responsable.");
+                    jLabel29.setText(nom + " " + prenom + " a été rétrograder Employé.");
+                } else {
+                        if (idGrade == 1) {
+                           JOptionPane.showMessageDialog(rootPane,"Vous étes le directeur");
+                        }
                     }
             }
-              
+            }
             state.executeUpdate(requete);
         } catch (SQLException ex) {
             Logger.getLogger(InterfaceGraphique.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
 
     }//GEN-LAST:event_jButtonPromActionPerformed
 
@@ -918,7 +1256,7 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         if (jTextFieldNomEmbauche.getText().length() == 0 || jTextFieldPrenomEmbauche.getText().length() == 0 || jTextFieldAdresseRueEmbauche.getText().length() == 0 || jTextFieldAdresseCpEmbauche.getText().length() == 0 || jTextFieldAdresseVilleEmbauche.getText().length() == 0 || jTextFieldNumTelPersoEmbauche.getText().length() == 0 || jTextFieldNumTelProEmbauche.getText().length() == 0 || jTextFieldEmailEmbauche.getText().length() == 0 || jTextFieldIdEmbauche.getText().length() == 0 || jTextFieldMDPEmbauche.getText().length() == 0) {
             JOptionPane.showInternalMessageDialog(this, "Erreur");
         } else {
-
+            
             java.sql.Connection ct = SdzConnection.getInstance();
             try {
                 Statement requete = ct.createStatement();
@@ -934,8 +1272,6 @@ public class InterfaceGraphique extends javax.swing.JFrame {
                 String mdp = jTextFieldMDPEmbauche.getText();
                 Integer grade = 3;
                 Integer role = 3;
-//            Integer grade = jComboBoxGrade.getSelectedIndex() + 1;
-//           Integer role = jComboBoxRole.getSelectedIndex() + 1;
                 Integer lignesRetournees = requete.executeUpdate("INSERT INTO Utilisateurs(nom,prenom,adresse_rue,adresse_cp,adresse_ville,tel_personnel,tel_professionnel,mail,identifiant,mot_de_passe,idRoles,idGrade) VALUES ('" + nom + "','" + prenom + "','" + adresseRue + "','" + adresseCp + "','" + adresseVille + "','" + numTelPerso + "','" + numTelPro + "','" + email + "','" + id + "','" + mdp + "','" + grade + "','" + role + "')");
             } catch (SQLException ex) {
                 Logger.getLogger(InterfaceGraphique.class.getName()).log(Level.SEVERE, null, ex);
@@ -944,6 +1280,7 @@ public class InterfaceGraphique extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        //vide tout les champs de saisir d'info de l'embauche
         jTextFieldNomEmbauche.setText("");
         jTextFieldPrenomEmbauche.setText("");
         jTextFieldAdresseRueEmbauche.setText("");
@@ -955,16 +1292,133 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         jTextFieldIdEmbauche.setText("");
         jTextFieldMDPEmbauche.setText("");
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        jTextFieldModifEmail.setEditable(true);
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        jTextFieldModifARue.setEditable(true);
+        jTextFieldModifACp.setEditable(true);
+        jTextFieldModifAVille.setEditable(true);
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+     jTextFieldModifNumPerso.setEditable(true);
+     jTextFieldModifNumPro.setEditable(true);
+     
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButtonModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifActionPerformed
+      // Envois les information de l'employé modifier dans la BDD
+        java.sql.Connection ct = SdzConnection.getInstance();
+         String requete = null;
+        String rueModif = jTextFieldModifARue.getText();
+        String cpModif = jTextFieldModifACp.getText();
+        String villeModif = jTextFieldModifAVille.getText();
+        String telPersoModif = jTextFieldModifNumPerso.getText();
+        String telProModif = jTextFieldModifNumPro.getText();
+        String EmailModif = jTextFieldModifEmail.getText();
+        String IDModif = jTextFieldModifId.getText();
+        String mDPModif = jTextFieldModifMDP.getText();
+        String nom = jLabel22.getText();
+        String prenom = jLabel38.getText();
+        try {
+            Statement state = ct.createStatement();
+            requete = "UPDATE Utilisateurs SET adresse_rue='"+rueModif+
+                    "',adresse_cp='"+cpModif+
+                    "',adresse_ville='"+villeModif+
+                    "',tel_personnel='"+telPersoModif+
+                    "',tel_professionnel='"+telProModif+
+                    "',mail='"+EmailModif+
+                    "',identifiant='"+IDModif+
+                    "',mot_de_passe='"+mDPModif+
+                    "'WHERE nom = '" + nom + "'And prenom ='" + prenom + "'";
+             state.executeUpdate(requete);
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfaceGraphique.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jButtonModifActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        jTextFieldModifId.setEditable(true);
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+      jTextFieldModifMDP.setEditable(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+         jTextFieldModifMDP1.setEditable(true);
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+      jTextFieldModifEmail1.setEditable(true);
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+      jTextFieldModifARue1.setEditable(true);
+        jTextFieldModifACp1.setEditable(true);
+        jTextFieldModifAVille1.setEditable(true);
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButtonModif1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModif1ActionPerformed
+        // Envois les information du responsable modifier dans la BDD
+        java.sql.Connection ct = SdzConnection.getInstance();
+         String requete = null;
+        String rueModif1 = jTextFieldModifARue1.getText();
+        String cpModif1 = jTextFieldModifACp1.getText();
+        String villeModif1 = jTextFieldModifAVille1.getText();
+        String telPersoModif1 = jTextFieldModifNumPerso1.getText();
+        String telProModif1 = jTextFieldModifNumPro1.getText();
+        String EmailModif1 = jTextFieldModifEmail1.getText();
+        String IDModif1 = jTextFieldModifId1.getText();
+        String mDPModif1 = jTextFieldModifMDP1.getText();
+        String nom1 = jLabel22.getText();
+        String prenom1 = jLabel38.getText();
+        try {
+            Statement state = ct.createStatement();
+            requete = "UPDATE Utilisateurs SET adresse_rue='"+rueModif1+
+                    "',adresse_cp='"+cpModif1+
+                    "',adresse_ville='"+villeModif1+
+                    "',tel_personnel='"+telPersoModif1+
+                    "',tel_professionnel='"+telProModif1+
+                    "',mail='"+EmailModif1+
+                    "',identifiant='"+IDModif1+
+                    "',mot_de_passe='"+mDPModif1+
+                    "'WHERE nom = '" + nom1 + "'And prenom ='" + prenom1 + "'";
+             state.executeUpdate(requete);
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfaceGraphique.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonModif1ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    jTextFieldModifNumPerso1.setEditable(true);
+     jTextFieldModifNumPro1.setEditable(true);
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        jTextFieldModifId1.setEditable(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
     public void connecte(String leNom, String lePrenom, String leGrade, String leRole) throws SQLException {
         //maj de l'etat de la connexion
         this.connecte = true;
         //ajout du nom,prenom, et role dans la fenetre si directeur
         if (leGrade.equals("Directeur")) {
-            this.nomjMenu.setText("Bonjour M. " + leNom +" / Role : " + leRole);
+            this.nomjMenu.setText("Bonjour M. " + leNom + " / Role : " + leRole);
         } else {
-                    //ajout du nom,prenom,dans la fenetre si emplyé ou responsable
+            //ajout du nom,prenom,dans la fenetre si emplyé ou responsable
 
             this.nomjMenu.setText("Connecté en tant que : " + leNom + " " + lePrenom);
+            jLabel22.setText(leNom);
+            jLabel38.setText(lePrenom);
         }
 
         //accueil devient leGrade de l'utilisateur
@@ -981,15 +1435,61 @@ public class InterfaceGraphique extends javax.swing.JFrame {
 //            }
         }
         if (leGrade.equals("Responsable")) {
-            jPanelMenuResponsable.setVisible(true);
+            jTabbedMenuResponsable.setVisible(true);
+            jLabel50.setVisible(false);
+            jLabel51.setVisible(false);
+            java.sql.Connection ct = SdzConnection.getInstance();
+            Statement state = ct.createStatement();
+            ResultSet ligneRetournees = state.executeQuery("select * from utilisateurs  WHERE nom = '" + leNom + "'And prenom ='" + lePrenom + "'");
+            if (ligneRetournees.next()) {
+                String infoRue1 = ligneRetournees.getString("adresse_rue");
+                String infoCp1 = ligneRetournees.getString("adresse_cp");
+                String infoVille1 = ligneRetournees.getString("adresse_ville");
+                String infoNumPerso1 = ligneRetournees.getString("tel_personnel");
+                String infoNumPro1 = ligneRetournees.getString("tel_professionnel");
+                String infoEmail1 = ligneRetournees.getString("mail");
+                String infoId1 = ligneRetournees.getString("identifiant");
+                String infoMDP1 = ligneRetournees.getString("mot_de_passe");
+                jTextFieldModifARue1.setText(infoRue1);
+                jTextFieldModifACp1.setText(infoCp1);
+                jTextFieldModifAVille1.setText(infoVille1);
+                jTextFieldModifNumPerso1.setText(infoNumPerso1);
+                jTextFieldModifNumPro1.setText(infoNumPro1);
+                jTextFieldModifEmail1.setText(infoEmail1);
+                jTextFieldModifId1.setText(infoId1);
+                jTextFieldModifMDP1.setText(infoMDP1);
+            }
         }
         if (leGrade.equals("Employé")) {
             jPanelMenuEmploye.setVisible(true);
             this.jLabel16.setText("Vous étes actuelement " + leRole + " dans l'entreprise");
+            jLabel22.setVisible(false);
+            jLabel38.setVisible(false);
+            java.sql.Connection ct = SdzConnection.getInstance();
+            Statement state = ct.createStatement();
+            ResultSet ligneRetournees = state.executeQuery("select * from utilisateurs  WHERE nom = '" + leNom + "'And prenom ='" + lePrenom + "'");
+            if (ligneRetournees.next()) {
+                String infoRue = ligneRetournees.getString("adresse_rue");
+                String infoCp = ligneRetournees.getString("adresse_cp");
+                String infoVille = ligneRetournees.getString("adresse_ville");
+                String infoNumPerso = ligneRetournees.getString("tel_personnel");
+                String infoNumPro = ligneRetournees.getString("tel_professionnel");
+                String infoEmail = ligneRetournees.getString("mail");
+                String infoId = ligneRetournees.getString("identifiant");
+                String infoMDP = ligneRetournees.getString("mot_de_passe");
+                jTextFieldModifARue.setText(infoRue);
+                jTextFieldModifACp.setText(infoCp);
+                jTextFieldModifAVille.setText(infoVille);
+                jTextFieldModifNumPerso.setText(infoNumPerso);
+                jTextFieldModifNumPro.setText(infoNumPro);
+                jTextFieldModifEmail.setText(infoEmail);
+                jTextFieldModifId.setText(infoId);
+                jTextFieldModifMDP.setText(infoMDP);
+            }
         }
-
+        
     }
-
+    
     public void deconnecte() {
         this.connecte = false;
         this.nomjMenu.setText(null);
@@ -999,7 +1499,7 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         jPanelMenuEmploye.setVisible(connecte);
         
     }
-
+    
     public void majConnexion() {
         deconnexionMenuItem.setEnabled(this.connecte);
         connexionMenuItem.setEnabled(!this.connecte);
@@ -1047,23 +1547,29 @@ public class InterfaceGraphique extends javax.swing.JFrame {
     private javax.swing.JMenuItem deconnexionMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu fileMenu;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JButton jButtonConnexion;
     private javax.swing.JButton jButtonInscription;
     private javax.swing.JButton jButtonModif;
+    private javax.swing.JButton jButtonModif1;
     private javax.swing.JButton jButtonProm;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1087,16 +1593,32 @@ public class InterfaceGraphique extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel333;
+    private javax.swing.JLabel jLabel344;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jListEmploye;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -1107,40 +1629,54 @@ public class InterfaceGraphique extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanelEmbaucher;
+    private javax.swing.JPanel jPanelInfos;
     private javax.swing.JPanel jPanelMenuAccueil;
     private javax.swing.JPanel jPanelMenuEmploye;
-    private javax.swing.JPanel jPanelMenuResponsable;
+    private javax.swing.JPanel jPanelPositionnement;
     private javax.swing.JPanel jPanelPromouvoir;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedMenuDirecteur;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTabbedPane jTabbedMenuResponsable;
     private javax.swing.JTextField jTextFieldAdresseCpEmbauche;
     private javax.swing.JTextField jTextFieldAdresseRueEmbauche;
     private javax.swing.JTextField jTextFieldAdresseVilleEmbauche;
     private javax.swing.JTextField jTextFieldEmailEmbauche;
     private javax.swing.JTextField jTextFieldIdEmbauche;
     private javax.swing.JTextField jTextFieldMDPEmbauche;
+    private javax.swing.JTextField jTextFieldModifACp;
+    private javax.swing.JTextField jTextFieldModifACp1;
+    private javax.swing.JTextField jTextFieldModifARue;
+    private javax.swing.JTextField jTextFieldModifARue1;
+    private javax.swing.JTextField jTextFieldModifAVille;
+    private javax.swing.JTextField jTextFieldModifAVille1;
+    private javax.swing.JTextField jTextFieldModifEmail;
+    private javax.swing.JTextField jTextFieldModifEmail1;
+    private javax.swing.JTextField jTextFieldModifId;
+    private javax.swing.JTextField jTextFieldModifId1;
+    private javax.swing.JTextField jTextFieldModifMDP;
+    private javax.swing.JTextField jTextFieldModifMDP1;
+    private javax.swing.JTextField jTextFieldModifNumPerso;
+    private javax.swing.JTextField jTextFieldModifNumPerso1;
+    private javax.swing.JTextField jTextFieldModifNumPro;
+    private javax.swing.JTextField jTextFieldModifNumPro1;
     private javax.swing.JTextField jTextFieldNomEmbauche;
+    private javax.swing.JTextField jTextFieldNomModifRole1;
     private javax.swing.JTextField jTextFieldNomProm;
     private javax.swing.JTextField jTextFieldNumTelPersoEmbauche;
     private javax.swing.JTextField jTextFieldNumTelProEmbauche;
     private javax.swing.JTextField jTextFieldPrenomEmbauche;
+    private javax.swing.JTextField jTextFieldPrenomModifRole1;
     private javax.swing.JTextField jTextFieldPrenomProm;
     private javax.swing.JMenuBar nomMenuBar;
     private javax.swing.JMenu nomjMenu;
