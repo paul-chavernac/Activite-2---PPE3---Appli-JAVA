@@ -9,28 +9,11 @@ package appli_pro;
  * @author nc
  */
 public class Personne {
-    private String nom;
+      private String nom;
     private String prenom;
-    private String adresse_rue;
-    private String adresse_cp;
-    private String adresse_ville;
-    private String tel_perso;
-    private String tel_pro;
-    private String mail;
-
-    public Personne() {
-    }
-
-    public Personne(String nom, String prenom, String adresse_rue, String adresse_cp, String adresse_ville, String tel_perso, String tel_pro, String mail) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse_rue = adresse_rue;
-        this.adresse_cp = adresse_cp;
-        this.adresse_ville = adresse_ville;
-        this.tel_perso = tel_perso;
-        this.tel_pro = tel_pro;
-        this.mail = mail;
-    }
+    private String courriel;
+    private String date_de_naissance;
+    private String adresse;
 
     public String getNom() {
         return nom;
@@ -48,52 +31,28 @@ public class Personne {
         this.prenom = prenom;
     }
 
-    public String getAdresse_rue() {
-        return adresse_rue;
+    public String getCourriel() {
+        return courriel;
     }
 
-    public void setAdresse_rue(String adresse_rue) {
-        this.adresse_rue = adresse_rue;
+    public void setCourriel(String courriel) {
+        this.courriel = courriel;
     }
 
-    public String getAdresse_cp() {
-        return adresse_cp;
+    public String getDate_de_naissance() {
+        return date_de_naissance;
     }
 
-    public void setAdresse_cp(String adresse_cp) {
-        this.adresse_cp = adresse_cp;
+    public void setDate_de_naissance(String date_de_naissance) {
+        this.date_de_naissance = date_de_naissance;
     }
 
-    public String getAdresse_ville() {
-        return adresse_ville;
+    public String getAdresse() {
+        return adresse;
     }
 
-    public void setAdresse_ville(String adresse_ville) {
-        this.adresse_ville = adresse_ville;
-    }
-
-    public String getTel_perso() {
-        return tel_perso;
-    }
-
-    public void setTel_perso(String tel_perso) {
-        this.tel_perso = tel_perso;
-    }
-
-    public String getTel_pro() {
-        return tel_pro;
-    }
-
-    public void setTel_pro(String tel_pro) {
-        this.tel_pro = tel_pro;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
 }

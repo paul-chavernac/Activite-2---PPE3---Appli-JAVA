@@ -4,11 +4,11 @@
  */
 package appli_pro;
 
-/**
+/** La Classe Etudiants qui contient le Login et le Mot-de-passe des etudiants ainsi que leurs geteurs et seteurs
  *
  * @author nc
  */
-public class Directeur extends Personne{
+public class Etudiants extends Personne{
     private String login;
     private String mot_de_passe;
     

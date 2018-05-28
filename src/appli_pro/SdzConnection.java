@@ -15,9 +15,9 @@ import java.sql.SQLException;
  */
 public class SdzConnection {
     
-    private static String url ="jdbc:mysql://localhost:3333/appli_etudiant";
-    private static String user="appli_etudiant";
-    private static String passwd = "ppe32017";
+    private static String url ="jdbc:mysql://localhost:3333/employee";
+    private static String user="employee";
+    private static String passwd = "Tchoin";
     private static Connection connect;
     public static Connection getInstance(){
         if (connect==null){

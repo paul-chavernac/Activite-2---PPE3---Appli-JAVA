@@ -4,7 +4,7 @@
  */
 package appli_pro;
 
-/**
+/** Classe de deconnexion qui herite de la classe javax.swing.JDialog
  *
  * @author nc
  */
@@ -36,23 +36,23 @@ public class Deconnexion extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButtonSeDeco = new javax.swing.JButton();
-        jButtonResterCo = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Deconnexion");
 
-        jButtonSeDeco.setText("Se déconnecter");
-        jButtonSeDeco.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Se déconnecter");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSeDecoActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        jButtonResterCo.setText("Rester connecté");
-        jButtonResterCo.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("Rester connecté");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonResterCoActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -62,39 +62,45 @@ public class Deconnexion extends javax.swing.JDialog {
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .add(34, 34, 34)
-                .add(jButtonSeDeco, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 144, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 144, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton2))
                 .addContainerGap(33, Short.MAX_VALUE))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(jButtonResterCo)
-                .add(48, 48, 48))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .add(19, 19, 19)
-                .add(jButtonSeDeco, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 41, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jButtonResterCo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 41, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 41, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 41, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonSeDecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSeDecoActionPerformed
-        // on se deconnecte
+   /**
+    * Le code du boutton pour se deconnecter
+    * @param evt 
+    */
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
         this.fenetre.deconnecte();
         this.fenetre.majConnexion();
         this.setVisible(false);
-    }//GEN-LAST:event_jButtonSeDecoActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButtonResterCoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResterCoActionPerformed
-        // on reste connecter
+   /**le code du boutton pour rester connecter
+    * 
+    * @param evt 
+    */
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
         this.setVisible(false);
-    }//GEN-LAST:event_jButtonResterCoActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    /**
+    /** La methode Main
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -120,6 +126,7 @@ public class Deconnexion extends javax.swing.JDialog {
             java.util.logging.Logger.getLogger(Deconnexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -136,7 +143,7 @@ public class Deconnexion extends javax.swing.JDialog {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonResterCo;
-    private javax.swing.JButton jButtonSeDeco;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
 }

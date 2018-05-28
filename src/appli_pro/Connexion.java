@@ -14,19 +14,31 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 
 /**
+ * La Classe Connexion qui est un heritage de la classe javax.swing.JDialog
  *
  * @author nc
  */
 public class Connexion extends javax.swing.JDialog {
+
     private InterfaceGraphique fenetre;
+
+        
+   
+
     /**
-     * Creates new form Connexion
+     * Le Contructeur de la classe Connexion Creates new form Connexion
      */
     public Connexion(java.awt.Frame parent, boolean modal) {
+        // on utilise Super pour faire un lien Avec la classe javax.swing.JDialog
         super(parent, modal);
         initComponents();
         //positionnement au milieu de la fenetre parente
@@ -35,8 +47,10 @@ public class Connexion extends javax.swing.JDialog {
         //sur la precedente fenêtre dans fermer connexion
         this.setModal(true);
         //on stocke dans this.fenetre la référence vers la fenetre parente
-        this.fenetre=(InterfaceGraphique)parent;
+        this.fenetre = (InterfaceGraphique) parent;
     }
+
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -78,12 +92,24 @@ public class Connexion extends javax.swing.JDialog {
             }
         });
 
+        jPassMDP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPassMDPActionPerformed(evt);
+            }
+        });
+
         jLabelMDP.setText("Mot de passe");
 
         jLabelIdentifiant.setText("Identifiant");
 
+        jTextFieldIdentifiant.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIdentifiantActionPerformed(evt);
+            }
+        });
+
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        jLabel1.setText("Saisissez vos informations");
+        jLabel1.setText("Connexion");
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,22 +123,21 @@ public class Connexion extends javax.swing.JDialog {
                         .add(123, 123, 123))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel1)
-                            .add(layout.createSequentialGroup()
-                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jLabelIdentifiant)
-                                    .add(jLabelMDP))
-                                .add(18, 18, 18)
-                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                    .add(jTextFieldIdentifiant)
-                                    .add(jPassMDP, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))))
-                        .add(59, 59, 59))))
+                            .add(jLabelIdentifiant)
+                            .add(jLabelMDP))
+                        .add(18, 18, 18)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(jTextFieldIdentifiant)
+                            .add(jPassMDP, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
+                        .add(59, 59, 59))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                        .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 95, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(114, 114, 114))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .add(12, 12, 12)
-                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 34, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabelIdentifiant)
@@ -129,70 +154,86 @@ public class Connexion extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * C'est le code du boutoon connexion, pour se connecter à l'application.
+     *
+     * @param evt
+     */
     private void jButtonConnecterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConnecterActionPerformed
         // TODO add your handling code here:
         /**
          * Code ici qui va interroger la base de données
          */
         //Vérification des saisies
-        if (jTextFieldIdentifiant.getText().length()==0 || jPassMDP.getText().length()==0){
+        if (jTextFieldIdentifiant.getText().length() == 0 || jPassMDP.getText().length() == 0) {
             JOptionPane.showMessageDialog(this, "Erreur de saisie, les deux champs doivent être renseignés.");
-            
+
             this.fenetre.deconnecte();
-        }else{
-            
+        } else {
+
             try {
-//                //interrogation de la BD pour savoir si l'identifiant/mot de passe est correct
-//                //instanciation de la classe Driver du paquetage jdbc de mysql
-                Class.forName("com.mysql.jdbc.Driver");
-//                //Chaine de connexion (prise dans l'onglet services)
-//                String connexionUrl="jdbc:mysql://localhost:3333/appli_etudiant?user=appli_etudiant&password=ppe32017";
-//               
-                //etablissement de la connexion
                 java.sql.Connection ct = SdzConnection.getInstance();
-                
+
                 //requete
-                Statement requete=ct.createStatement();
-                String identifiant=jTextFieldIdentifiant.getText();
-                String mdp=jPassMDP.getText();
-                
-            
+                Statement requete = ct.createStatement();
+                String identifiant = jTextFieldIdentifiant.getText();
+                String mdp = jPassMDP.getText();
+
                 //application du cryptage md5 au mdp
                 // ici on appelle md5 membre static de la classe outils
-                mdp=Outils.md5(mdp);
-            
-                ResultSet lignesRetournees=requete.executeQuery("select * from Utilisateurs,Grades,Roles where identifiant='"+identifiant+"' and mot_de_passe='"+mdp+"'and Utilisateurs.idGrade=Grades.id and Utilisateurs.idRoles=Roles.idRole" );
-                
-                if (lignesRetournees.next()){
-                    String nom=lignesRetournees.getString("nom");
-                    String prenom=lignesRetournees.getString("prenom");
-                    String grade=lignesRetournees.getString("Grades.nom");
-                    String role=lignesRetournees.getString("roles.nomRole");
+                mdp = Outils.md5(mdp);
+                ResultSet lignesRetournees = requete.executeQuery("select * from utilisateurs where identifiant='" + identifiant + "' and mot_de_passe='" + mdp + "'");
+                if (lignesRetournees.next()) {
+                    String nom = lignesRetournees.getString("nom");
+                    int leroele = lignesRetournees.getInt("idGrade");
                     //Modifications de la Mission 2 à placer ici
                     
                     
-                    this.fenetre.connecte(nom,prenom,grade,role);
-                    this.setVisible(false);
-                    this.fenetre.majConnexion();
+   
+                    if (leroele == 4) {
+                // on est conecter avec le role 3 et on va appeler la fonction roles qui va faire apparaitre le panel JDIRECTEUR
+                        
+                        
+                       fenetre.roles();
+                       
+                         this.fenetre.connecte(nom);
+                    }
                     
-                }else{
+                    if(leroele == 3){
+                        
+                        fenetre.responsablee();
+                        this.fenetre.connecte(nom);
+                    }
+                    
+                    if(leroele == 2 ){
+                        fenetre.personnels();
+                        this.fenetre.connecte(nom);
+                    }
+                    this.setVisible(false); 
+                    
+                } else {
                     JOptionPane.showMessageDialog(rootPane, "identifiant ou mot de passe incorrect");
                 };
-                
-                
-            } catch (ClassNotFoundException ex) {
-                JOptionPane.showMessageDialog(rootPane, "Classe de connexion mysql introuvable"+ex.toString());
-            }
-             catch (SQLException ex) {
-                JOptionPane.showMessageDialog(rootPane, "SQL exception ... "+ex.toString());
-            }
-            catch (NoSuchAlgorithmException ex) {
-                    Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
+
+                //} catch (ClassNotFoundException ex) {
+                //  JOptionPane.showMessageDialog(rootPane, "Classe de connexion mysql non trouvee..." + ex.toString());
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(rootPane, "SQL exception ... " + ex.toString());
+            } catch (NoSuchAlgorithmException ex) {
+                Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
 
     }//GEN-LAST:event_jButtonConnecterActionPerformed
+
+    private void jTextFieldIdentifiantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdentifiantActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIdentifiantActionPerformed
+
+    private void jPassMDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPassMDPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPassMDPActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,6 +260,7 @@ public class Connexion extends javax.swing.JDialog {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Connexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */

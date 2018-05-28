@@ -4,12 +4,13 @@
  */
 package appli_pro;
 
-/**
+/** La classe qui a les attribus de nom, adresse et contact et contient leurs Geteurs et Seteurs
  *
  * @author nc
  */
 public class Entreprises {
     private String nom;
+   
     private String adresse;
     private Personne contact;
 
