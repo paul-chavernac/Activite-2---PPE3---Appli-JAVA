@@ -172,7 +172,7 @@ public class InterfaceGraphique extends javax.swing.JFrame {
 
         jDirecteur.setBackground(new java.awt.Color(102, 102, 102));
 
-        jInscription.setText("Créer un Employe");
+        jInscription.setText("Créer un Employé(e)");
         jInscription.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jInscriptionActionPerformed(evt);
@@ -198,14 +198,14 @@ public class InterfaceGraphique extends javax.swing.JFrame {
             }
         });
 
-        jPromouvoirEmployee.setText("Promouvoir un Employée");
+        jPromouvoirEmployee.setText("Promouvoir un Employé(e)");
         jPromouvoirEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPromouvoirEmployeeActionPerformed(evt);
             }
         });
 
-        jRetrogarder.setText("Rétrograder Emplyé");
+        jRetrogarder.setText("Rétrograder Employé(e)");
         jRetrogarder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRetrogarderActionPerformed(evt);
@@ -219,7 +219,7 @@ public class InterfaceGraphique extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Gèrer les formations");
+        jButton3.setText("Gérer les formations");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -238,25 +238,11 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         jDirecteurLayout.setHorizontalGroup(
             jDirecteurLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jDirecteurLayout.createSequentialGroup()
-                .add(jDirecteurLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jDirecteurLayout.createSequentialGroup()
-                        .add(1060, 1060, 1060)
-                        .add(jButton7))
-                    .add(jDirecteurLayout.createSequentialGroup()
-                        .add(1075, 1075, 1075)
-                        .add(jDirecteurLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(jSortie1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jDeconnexionDirecteur, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 103, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(727, Short.MAX_VALUE))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jDirecteurLayout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(1014, Short.MAX_VALUE)
                 .add(jDirecteurLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jDirecteurLayout.createSequentialGroup()
                         .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 381, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(585, 585, 585))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jDirecteurLayout.createSequentialGroup()
-                        .add(jInscription, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 130, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(730, 730, 730))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jDirecteurLayout.createSequentialGroup()
                         .add(jPromouvoirEmployee)
                         .add(718, 718, 718))
@@ -267,33 +253,41 @@ public class InterfaceGraphique extends javax.swing.JFrame {
                         .add(jDirecteurLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 187, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jModifications1))
-                        .add(700, 700, 700))))
+                        .add(700, 700, 700))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jDirecteurLayout.createSequentialGroup()
+                        .add(jButton7)
+                        .add(724, 724, 724))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jDirecteurLayout.createSequentialGroup()
+                        .add(jDirecteurLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jSortie1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jDeconnexionDirecteur, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 103, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(732, 732, 732))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jDirecteurLayout.createSequentialGroup()
+                        .add(jInscription)
+                        .add(729, 729, 729))))
         );
         jDirecteurLayout.setVerticalGroup(
             jDirecteurLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jDirecteurLayout.createSequentialGroup()
-                .add(jDirecteurLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jDirecteurLayout.createSequentialGroup()
-                        .add(29, 29, 29)
-                        .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(40, 40, 40)
-                        .add(jInscription, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(37, 37, 37)
-                        .add(jPromouvoirEmployee)
-                        .add(50, 50, 50)
-                        .add(jRetrogarder)
-                        .add(45, 45, 45)
-                        .add(jModifications1))
-                    .add(jDirecteurLayout.createSequentialGroup()
-                        .add(445, 445, 445)
-                        .add(jButton7)))
-                .add(50, 50, 50)
+                .add(29, 29, 29)
+                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(40, 40, 40)
+                .add(jInscription, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(37, 37, 37)
+                .add(jPromouvoirEmployee)
+                .add(38, 38, 38)
+                .add(jRetrogarder)
+                .add(45, 45, 45)
+                .add(jModifications1)
+                .add(52, 52, 52)
+                .add(jButton7)
+                .add(32, 32, 32)
                 .add(jButton3)
-                .add(58, 58, 58)
+                .add(32, 32, 32)
                 .add(jDeconnexionDirecteur, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 41, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(67, 67, 67)
+                .add(29, 29, 29)
                 .add(jSortie1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(463, Short.MAX_VALUE))
+                .addContainerGap(457, Short.MAX_VALUE))
         );
 
         desktopPane.add(jDirecteur);
@@ -417,7 +411,7 @@ public class InterfaceGraphique extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Gèrer les formations");
+        jButton2.setText("Gérer les formations");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -491,7 +485,7 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         nomMenuBar.add(aideMenu);
         nomMenuBar.add(nomjMenu);
 
-        jMenu1.setText("jMenu1");
+        jMenu1.setText("Menu");
 
         deconnexionMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         deconnexionMenuItem.setMnemonic('s');
